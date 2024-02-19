@@ -11,13 +11,21 @@ module FirebaseClient
       def default_payload(device_token:, title:, body:, data:)
         {
           token: device_token,
-          notification: { title:, body: },
+          notification: {
+            title:,
+            body:
+          },
           data:,
           apns: {
             payload: {
               aps: {
                 sound: 'default'
               }
+            }
+          },
+          android: {
+            notification: {
+              sound: 'default'
             }
           }
         }
