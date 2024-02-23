@@ -29,6 +29,8 @@ rails generate firebase_client:install
 # @param body [String] notification body
 # @param data [Hash] hash with additional internal data that should be send within push notification (values must have String type)
 # @return [Hash] Firebase response
+# @param ios_sound [String] (Optional) iOS sound
+# @param android_sound [String] (Optional) Android sound
 ::FirebaseClient::Messages::SendService.call(device_token:, title:, body:, data:)
 
 # An example:

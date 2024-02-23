@@ -3,17 +3,19 @@
 module FirebaseClient
   module Messages
     class SendService < BaseService
-      include Payload
-
       # @param device_token [String] Firebase device token (registration ID)
       # @param title [String] notification title
       # @param body [String] notification body
       # @param data [Hash] hash with additional internal data that should be send within push notification
-      def initialize(device_token:, title:, body:, data:)
+      # @param ios_sound [String] iOS sound
+      # @param android_sound [String] Android sound
+      def initialize(device_token:, title:, body:, data:, ios_sound: nil, android_sound: nil) # rubocop:disable Metrics/ParameterLists
         @device_token = device_token
         @title = title
         @body = body
         @data = data
+        @ios_sound = ios_sound
+        @android_sound = android_sound
         super
       end
 
@@ -28,7 +30,12 @@ module FirebaseClient
       private
 
       def payload
-        @payload ||= default_payload(device_token: @device_token, title: @title, body: @body, data: @data)
+        @payload ||= Payload.call(device_token: @device_token,
+                                  title: @title,
+                                  body: @body,
+                                  data: @data,
+                                  ios_sound: @ios_sound,
+                                  android_sound: @android_sound)
       end
     end
   end

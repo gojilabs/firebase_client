@@ -1,7 +1,8 @@
 ## Released
 
-## [0.2.0] - 2024-02-19
+## [0.2.0] - 2024-02-23
 
+- added options to specify APNs and Android sound
 - default sound for Android notifications
 - ruby update to 3.3
 
