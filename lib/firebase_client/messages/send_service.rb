@@ -9,13 +9,15 @@ module FirebaseClient
       # @param data [Hash] hash with additional internal data that should be send within push notification
       # @param ios_sound [String] iOS sound
       # @param android_sound [String] Android sound
-      def initialize(device_token:, title:, body:, data:, ios_sound: nil, android_sound: nil) # rubocop:disable Metrics/ParameterLists
+      # @param android_channel_id [String] allows to group notifications into channels and manage them together
+      def initialize(device_token:, title:, body:, data:, ios_sound: nil, android_sound: nil, android_channel_id: nil) # rubocop:disable Metrics/ParameterLists
         @device_token = device_token
         @title = title
         @body = body
         @data = data
         @ios_sound = ios_sound
         @android_sound = android_sound
+        @android_channel_id = android_channel_id
         super
       end
 
@@ -35,7 +37,8 @@ module FirebaseClient
                                   body: @body,
                                   data: @data,
                                   ios_sound: @ios_sound,
-                                  android_sound: @android_sound)
+                                  android_sound: @android_sound,
+                                  android_channel_id: @android_channel_id)
       end
     end
   end
