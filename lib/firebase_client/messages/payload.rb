@@ -13,7 +13,7 @@ module FirebaseClient
       # @param ios_sound [String] iOS sound
       # @param android_sound [String] Android sound
       # @param android_channel_id [String] allows to group notifications into channels and manage them together
-      def initialize(device_token:, title:, body:, data:, ios_sound:, android_sound:, android_channel_id: nil) # rubocop:disable Metrics/ParameterLists
+      def initialize(device_token:, title:, body:, data:, ios_sound:, android_sound:, android_channel_id:) # rubocop:disable Metrics/ParameterLists
         @device_token = device_token
         @title = title
         @body = body
@@ -60,7 +60,7 @@ module FirebaseClient
           android: {
             notification: {
               sound: @android_sound,
-              android_channel_id: @android_channel_id
+              channel_id: @android_channel_id
             }
           }
         }
