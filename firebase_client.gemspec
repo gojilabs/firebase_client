@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'Firebase client gem'
   spec.description = 'Ruby gem with FCM support: easily sends push notifications to Firebase for smooth mobile device communication.' # rubocop:disable Layout/LineLength
-  spec.required_ruby_version = '>= 3.2.2'
+  spec.required_ruby_version = '>= 3.3'
 
   spec.metadata['source_code_uri'] = 'https://github.com/gojilabs/firebase_client'
   spec.metadata['changelog_uri'] = 'https://github.com/gojilabs/firebase_client/blob/main/CHANGELOG.md'
