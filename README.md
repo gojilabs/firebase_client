@@ -31,6 +31,7 @@ rails generate firebase_client:install
 # @return [Hash] Firebase response
 # @param ios_sound [String] (Optional) iOS sound
 # @param android_sound [String] (Optional) Android sound
+# @param badge [Integer] (Optional) unread push notifications count
 ::FirebaseClient::Messages::SendService.call(device_token:, title:, body:, data:)
 
 # An example:
