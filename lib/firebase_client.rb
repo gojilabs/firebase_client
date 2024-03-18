@@ -10,6 +10,8 @@ require_relative 'firebase_client/client'
 require_relative 'firebase_client/messages/payload'
 require_relative 'firebase_client/messages/response_handler'
 require_relative 'firebase_client/messages/send_service'
+require_relative 'firebase_client/ios_badge/remove_service'
+require_relative 'firebase_client/ios_badge/update_service'
 
 module FirebaseClient
   class << self

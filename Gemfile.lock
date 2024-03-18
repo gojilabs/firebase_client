@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    firebase_client (0.3.0)
+    firebase_client (0.4.0)
       fcm (~> 1.0.8)
       rails (~> 7.0)
 

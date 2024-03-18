@@ -1,5 +1,9 @@
 ## Released
 
+## [0.4.0] - 2024-03-18
+
+- added services to update and remove iOS mobile app icon badge
+
 ## [0.3.0] - 2024-03-15
 
 - added badge attribute to payload

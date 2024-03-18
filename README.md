@@ -23,6 +23,7 @@ rails generate firebase_client:install
 
 ## Usage
 
+### Send push notification
 ```ruby
 # @param device_token [String] Firebase device token (registration ID)
 # @param title [String] notification title
@@ -41,6 +42,32 @@ rails generate firebase_client:install
   body: 'This is push notification content',
   data: {user_id: '123', environment: 'staging'}
 )
+```
+
+### iOS mobile app icon badge
+
+<img alt="badge.png" height="150" src="badge.png"/>
+
+#### Update badge
+```ruby
+# @param device_token [String] Firebase device token (registration ID)
+# @param badge [Integer] unread push notifications count
+::FirebaseClient::IosBadge::UpdateService.call(device_token:, badge:)
+
+# An example:
+::FirebaseClient::IosBadge::UpdateService.call(
+  device_token: 'eck6zE4RAUDbnYnrFL_oPG:APA91bF6zpYgLcjLtcADhgbF3...', 
+  badge: 7
+)
+```
+
+#### Remove badge
+```ruby
+# @param device_token [String] Firebase device token (registration ID)
+::FirebaseClient::IosBadge::RemoveService.call(device_token:)
+
+# An example:
+::FirebaseClient::IosBadge::RemoveService.call(device_token: 'eck6zE4RAUDbnYnrFL_oPG:APA91bF6zpYgLcjLtcADhgbF3...')
 ```
 
 ## Development

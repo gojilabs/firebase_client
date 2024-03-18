@@ -11,7 +11,8 @@ module FirebaseClient
       # @param android_sound [String] Android sound
       # @param android_channel_id [String] allows to group notifications into channels and manage them together
       # @param badge [Integer] unread push notifications count
-      def initialize(device_token:, title:, body:, data:, ios_sound: nil, android_sound: nil, android_channel_id: nil, badge: nil) # rubocop:disable Metrics/ParameterLists
+      # rubocop:disable Metrics/ParameterLists
+      def initialize(device_token:, title:, body:, data:, ios_sound: nil, android_sound: nil, android_channel_id: nil, badge: nil) # rubocop:disable Layout/LineLength
         @device_token = device_token
         @title = title
         @body = body
@@ -22,6 +23,7 @@ module FirebaseClient
         @badge = badge
         super
       end
+      # rubocop:enable Metrics/ParameterLists
 
       # @return [Hash] Firebase response
       def call
